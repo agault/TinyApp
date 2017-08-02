@@ -2,6 +2,10 @@ var express = require("express");
 var app = express();
 var PORT = process.env.PORT || 8080; // default port 8080
 
+var cookieParser = require('cookie-parser')
+
+app.use(cookieParser())
+
 app.set("view engine", "ejs");
 
 var urlDatabase = {
@@ -19,7 +23,7 @@ app.get("/hello", (req, res) => {
   res.end("<html><body>Hello <b>World</b></body></html>\n");
 });
 app.get("/urls", (req, res) => {
-  let templateVars = { urls: urlDatabase };
+  let templateVars = { urls: urlDatabase, username: req.cookies };
   res.render("urls_index", templateVars);
 });
 
@@ -28,7 +32,7 @@ app.get("/urls/new", (req, res) => {
 });
 
 app.get("/urls/:id", (req, res) => {
-  let templateVars = { shortURL: req.params.id };
+  let templateVars = { shortURL: req.params.id, username: req.cookies  };
   res.render("urls_show", templateVars);
 });
 const bodyParser = require("body-parser");
@@ -73,4 +77,15 @@ app.post("/urls/:id/update", (req, res) => {
   console.log(req)
   res.redirect("http://localhost:8080/urls/")
 });
+
+app.post("/login", (req, res) => {
+ res.cookie( "username", req.body.username)
+ res.redirect("/urls")
+});
+app.post("/logout", (req, res) => {
+ res.cookie( "username", req.body.username)
+ res.redirect("/urls")
+});
+
+
 

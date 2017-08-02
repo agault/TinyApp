@@ -2,3 +2,19 @@
 <h1>
 Tiny App!
 </h1>
+
+<% if(typeof username === 'undefined'){ %>
+  <form action="/login" method="POST" style="margin:150px;">
+      <label for="name" >Enter username:</label>
+      <input id="name" type="text" name="username" style="width: 300px">
+      <input type="submit" value="Loggin">
+  </form>
+<% } else { %>
+
+
+      <button>
+      <a href="/logout"> Logout </a>
+      </button>
+
+<%} %>
+
