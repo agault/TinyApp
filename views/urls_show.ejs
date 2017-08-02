@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TinyApp</title>
+</head>
+<body>
+  <div></div>
+
+    <form action="/urls/<%=shortURL%>/update" method="POST" style="margin:150px;">
+    <h1>
+      <label for="shortURL">ShortURL:<%= shortURL %></label>
+    </h1>
+      <input id="longURL" placeholder="http://" type="text" name="longURL"style="width: 300px">
+      <input type="submit" value="update">
+    </form>
+</body>
+</body>
+</html>
