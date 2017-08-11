@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>TinyApp</title>
+  <title>TinyApp!</title>
 </head>
 <body>
 <header>
@@ -11,15 +11,16 @@
 <ul>
 
   <% for (var i in urls) { %>
-        <li><%= i %> : <%= urls[i] %></li>
+    <li><%= i %> : <%= urls[i].longURL %></li>
 
-        <form method="POST" action="/urls/<%= i %>/delete">
-            <a href="url">Edit</a>
-          <button> delete </button>
+    <form method="POST" action="/urls/<%= i %>/delete">
+      <a href="url">Edit</a>
+        <button> delete </button>
         </form>
   <% } %>
 
 
 </ul>
+<a href="urls/new">Add new!</a>
 </body>
 </html>

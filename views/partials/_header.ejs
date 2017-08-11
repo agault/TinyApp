@@ -1,16 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<h1>
-Tiny App!
-</h1>
+<head>
+<link rel="stylesheet" type="text/css" href="Loginpage.css">
+  <meta charset="utf-8">
+  <title>tinyApp</title>
+</head>
+<img class="tinyrick" src="https://ih1.redbubble.net/image.199390969.3002/ap,550x550,12x12,1,transparent,t.u2.png">
+<h1 class="header">TinyApp</h1>
+<div id="Registerbutton">
+<% if (!user) { %>
+<button><a href="http://localhost:8080/register">Register</a></button>
 
-<% if(user === undefined){ %>
-  <a href="/login">Login</a>
-  <a href="/register">Register</a>
-<% } else { %>
-       <form action="/logout" method="POST" style="margin:150px;">
-      <button>
-       Logout
-      </button>
-    </form>
-<%} %>
 
+
+<body>
+<h2>Login to TinyApp</h2>
+  </form>
+  <%  } else { %>
+  <p>Hello, <%= user.email %></p>
+    <form method="POST" action="/logout">
+    <input type="submit" value="logout">
+  <% }; %>
+  </form>
+<body>
+</html>

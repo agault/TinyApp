@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+ <meta charset="utf-8">
 <head>
   <title>TinyApp</title>
 </head>
@@ -7,12 +8,12 @@
   <div></div>
 
     <form action="/urls/<%=shortURL%>/update" method="POST" style="margin:150px;">
-    <h1>
-      <label for="shortURL">ShortURL:<%= shortURL %></label>
-    </h1>
-      <input id="longURL" placeholder="http://" type="text" name="longURL"style="width: 300px">
-      <input type="submit" value="update">
-    </form>
-</body>
+    <h3>Short URL: <b><%=shortURL%></b></h3>
+      <h3>Long URL: <b><a target="_blank" href="<%= longURL %>"><%= longURL %></b></a></h3>
+    <form method = "POST" action = '/urls/<%=shortURL%>'>
+    <input id="longURL" type="text" name="longURL" placeholder='<%=longURL%>' class="form-control">
+     <input type="submit" value="Update">
+     </form></br>
+    <a href='/urls'>Back to your URL's</a>
 </body>
 </html>

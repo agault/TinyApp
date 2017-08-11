@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head></head>
+  <head>
+    <meta charset="utf-8">
+    <title>Create new short URL</title>
+
+  </head>
   <body style="font-size:20px; padding:50px;">
     <% include partials/_header %>
+    <h2>Get a short URL</h2>
     <form action="/urls" method="POST" style="margin:150px;">
       <label for="longURL">Enter a URL:</label>
       <input id="longURL" type="text" name="longURL" placeholder="http://" style="width: 300px">
