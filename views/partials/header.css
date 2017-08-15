@@ -1,7 +1,16 @@
-#logo {
-  height: 100px;
-  width: 100px;
-  border-color:black;
+
+#nav-bar {
+  background-color: #45ADA8;
+  color: #E5FCC2;
+  height: 80px;
+  width: 100%;
+  padding: 0 2em;
+  line-height: 2;
+}
+#nav-bar .tinyrick {
+  height: 50px;
+  width: 50px;
+  border-color: black;
   border-width: 3px;
   float: left;
 }

@@ -4,12 +4,16 @@
 <head>
   <title>TinyApp</title>
 </head>
+<div><% include ./partials/_header %>
+</div>
 <body>
   <div></div>
 
     <form action="/urls/<%=shortURL%>/update" method="POST" style="margin:150px;">
     <h3>Short URL: <b><%=shortURL%></b></h3>
-      <h3>Long URL: <b><a target="_blank" href="<%= longURL %>"><%= longURL %></b></a></h3>
+      <h3>Long URL: <b><a target="_blank"
+        href="<%= longURL %>"><%= longURL %></b></a></h3>
+
     <form method = "POST" action = '/urls/<%=shortURL%>'>
     <input id="longURL" type="text" name="longURL" placeholder='<%=longURL%>' class="form-control">
      <input type="submit" value="Update">
