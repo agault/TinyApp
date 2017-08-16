@@ -133,7 +133,7 @@ app.post("/urls", (req, res) => {
 });
 
 // POST the updated short url
-app.post("/urls/:id", (req, res) => {
+app.post("/urls/:id/update", (req, res) => {
   const newUser = req.session.user;
   if (!req.body.longURL) {
     res.sendStatus(400);
